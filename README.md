@@ -67,7 +67,7 @@ The following processors are not supported:
 - Intel Pentium, Celeron, Atom, Xeon, and Core Ultra processors;
 - Apple silicon processors.
 
-A processor being in the supported generation range does not guarantee that the motherboard, graphics, USB controller, network adapter, or other components will work. The USB drive's `config.plist` must still be configured for the exact PC.
+A processor being in the supported generation range does not guarantee that the motherboard, graphics, USB controller, network adapter, or other components will work. The USB drive's `EFI/CLOVER/config.plist` must still be configured for the exact PC.
 
 ### Depending on the intended workflow
 
@@ -106,12 +106,12 @@ balenaEtcher supports DMG input and performs a validation pass after writing.
 
 Windows may report that one or more partitions are unreadable after flashing. Do not format them; this can be normal for macOS-formatted boot media.
 
-## Configure `config.plist` on the USB drive
+## Configure `EFI/CLOVER/config.plist` on the USB drive
 
-> [!IMPORTANT]
-> After flashing the image and before the first boot from the USB drive, edit the bootloader's `config.plist` on the flashed drive for the exact components in your PC. The default configuration is not universal and may fail to boot—or behave incorrectly—on different hardware.
+[!IMPORTANT]
+> After flashing the image and before the first boot from the USB drive, edit `EFI/CLOVER/config.plist` on the flashed drive for the exact components in your PC. The default configuration is not universal and may fail to boot—or behave incorrectly—on different hardware.
 
-Mount the bootloader/EFI partition of the flashed USB drive, locate `config.plist`, and review at least the following areas where applicable:
+Mount the EFI partition of the flashed USB drive, open `EFI/CLOVER/config.plist`, and review at least the following areas where applicable:
 
 - CPU generation, motherboard chipset, and firmware mode;
 - ACPI patches and SSDTs;
@@ -120,11 +120,11 @@ Mount the bootloader/EFI partition of the flashed USB drive, locate `config.plis
 - network, audio, and storage drivers/kexts;
 - SMBIOS/PlatformInfo values, boot arguments, and bootloader quirks.
 
-Keep a backup of the original file before editing it. The exact file location and available settings depend on the bootloader included with the image. Validate the completed `config.plist` with a tool that matches the installed bootloader version before booting from the USB drive.
+Keep a backup of the original file before editing it. Validate the completed `EFI/CLOVER/config.plist` with a Clover-compatible configuration tool before booting from the USB drive.
 
 ## Boot from the USB drive
 
-1. Confirm that `config.plist` on the flashed USB drive has been adapted to the computer's hardware.
+1. Confirm that `EFI/CLOVER/config.plist` on the flashed USB drive has been adapted to the computer's hardware.
 2. Leave the flashed USB drive connected and restart the computer.
 3. Open the one-time boot menu. Common keys are `F12`, `F11`, `F9`, `Esc`, or `Option` on Intel Macs; the exact key depends on the manufacturer.
 4. Select the USB drive. If two entries are shown, start with the UEFI entry unless the compatibility notes specify Legacy/CSM mode.
