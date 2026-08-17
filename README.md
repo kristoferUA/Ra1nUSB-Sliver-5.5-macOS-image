@@ -1,4 +1,4 @@
-# Ra1nUSB — Sliver 5.5
+  # Ra1nUSB — Sliver 5.5
 
 A bootable USB image based on macOS.
 
@@ -105,18 +105,6 @@ balenaEtcher supports DMG input and performs a validation pass after writing.
 8. Safely eject the USB drive.
 
 Windows may report that one or more partitions are unreadable after flashing. Do not format them; this can be normal for macOS-formatted boot media.
-
-### Rufus compatibility note
-
-Rufus is primarily intended for ISO and raw disk images, and direct DMG handling is not guaranteed. Use Rufus only if your installed version recognizes this DMG and offers a raw/DD write mode. If it does not, do not rename or convert the file blindly—use balenaEtcher instead.
-
-If Rufus recognizes the image:
-
-1. Run Rufus as administrator and select the correct USB drive under **Device**.
-2. Select `Ra1nUSB Sliver.dmg` as the boot image.
-3. Start the write and choose **DD Image mode** if Rufus asks.
-4. Confirm that all data on the selected drive may be destroyed.
-5. Wait for completion, close Rufus, and safely eject the drive.
 
 ## Configure `config.plist` on the USB drive
 
