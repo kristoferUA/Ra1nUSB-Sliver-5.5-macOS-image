@@ -4,21 +4,9 @@ A bootable USB image based on macOS.
 
 [Download release v1.0.0](https://github.com/kristoferUA/Ra1nUSB-Sliver-5.5-macOS-image/releases/tag/v1.0.0)
 
-> [!IMPORTANT]
-> The image description, included components, intended workflows, and exact compatibility matrix will be added here.
-
 ## About the image
 
-<!-- Add the image description here. Suggested topics:
-- purpose and main features;
-- macOS base/version;
-- bundled applications and utilities;
-- supported host hardware;
-- supported target devices and OS versions;
-- known limitations and version history.
--->
-
-_Description will be added here._
+A macOS boot image with pre-installed bypass and jailbreak tools. Includes Sliver 5.5 and checkra1n versions 0.9.2, 0.10.1, 0.10.2, 0.11.0, and 0.12.4.
 
 ## Download
 
