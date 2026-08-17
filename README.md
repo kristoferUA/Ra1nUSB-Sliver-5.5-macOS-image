@@ -21,7 +21,7 @@ Download the compressed image from [GitHub Releases](https://github.com/kristofe
 | Compressed size | Approximately 1.23 GB |
 | Archive SHA-256 | `9e4a08844b0b2d49f6c8cd308632f28d851fac5554e538f22dc7d6ca39cf7d9a` |
 
-Extract the archive with [7-Zip](https://www.7-zip.org/) or another 7z-compatible archiver before flashing. Do not select the `.7z` archive in balenaEtcher or Rufus; select the extracted DMG.
+Extract the archive with [7-Zip](https://www.7-zip.org/) or another 7z-compatible archiver before flashing. Do not select the `.7z` archive in balenaEtcher; select the extracted DMG.
 
 ### Extracted image
 
