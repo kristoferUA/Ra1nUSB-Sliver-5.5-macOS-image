@@ -2,6 +2,8 @@
 
 A bootable USB image based on macOS.
 
+[Download release v1.0.0](https://github.com/kristoferUA/Ra1nUSB-Sliver-5.5-macOS-image/releases/tag/v1.0.0)
+
 > [!IMPORTANT]
 > The image description, included components, intended workflows, and exact compatibility matrix will be added here.
 
@@ -18,15 +20,30 @@ A bootable USB image based on macOS.
 
 _Description will be added here._
 
-## Image file
+## Download
+
+Download the compressed image from [GitHub Releases](https://github.com/kristoferUA/Ra1nUSB-Sliver-5.5-macOS-image/releases/tag/v1.0.0):
+
+**[Download `Ra1nUSB.Sliver.7z`](https://github.com/kristoferUA/Ra1nUSB-Sliver-5.5-macOS-image/releases/download/v1.0.0/Ra1nUSB.Sliver.7z)**
+
+| Release asset | Value |
+| --- | --- |
+| Version | `v1.0.0` |
+| Archive | `Ra1nUSB.Sliver.7z` |
+| Compressed size | Approximately 1.23 GB |
+| Archive SHA-256 | `9e4a08844b0b2d49f6c8cd308632f28d851fac5554e538f22dc7d6ca39cf7d9a` |
+
+Extract the archive with [7-Zip](https://www.7-zip.org/) or another 7z-compatible archiver before flashing. Do not select the `.7z` archive in balenaEtcher or Rufus; select the extracted DMG.
+
+### Extracted image
 
 | Property | Value |
 | --- | --- |
 | File name | `Ra1nUSB Sliver.dmg` |
 | Size | 4,005,560,320 bytes (approximately 3.73 GiB) |
-| SHA-256 | `4b78b3740b5276bbc559ab916746a9d1fd228e8a6652c1737a78e854e955b24e` |
+| Image SHA-256 | `4b78b3740b5276bbc559ab916746a9d1fd228e8a6652c1737a78e854e955b24e` |
 
-The DMG is intentionally kept outside Git history. See [Distribution notes](#distribution-notes).
+The DMG is distributed as a compressed Release asset and is intentionally kept outside Git history.
 
 ## Hardware requirements
 
@@ -84,6 +101,8 @@ These are baseline requirements rather than a model-by-model compatibility guara
 > [!WARNING]
 > Flashing erases the selected USB drive completely. Back up the drive first and verify the target device carefully before starting.
 
+Download `Ra1nUSB.Sliver.7z`, verify its checksum, and extract `Ra1nUSB Sliver.dmg` before following either method below.
+
 ### Recommended: balenaEtcher
 
 balenaEtcher supports DMG input and performs a validation pass after writing.
@@ -140,24 +159,27 @@ Avoid installing or writing anything to an internal disk unless you have a verif
 
 ## Verify the download
 
-Verify the image before flashing, especially after transferring or downloading it.
+Verify both the downloaded archive and the extracted image before flashing.
 
 ### Windows PowerShell
 
 ```powershell
+Get-FileHash -LiteralPath '.\Ra1nUSB.Sliver.7z' -Algorithm SHA256
 Get-FileHash -LiteralPath '.\Ra1nUSB Sliver.dmg' -Algorithm SHA256
 ```
 
 ### macOS or Linux
 
 ```bash
+shasum -a 256 'Ra1nUSB.Sliver.7z'
 shasum -a 256 'Ra1nUSB Sliver.dmg'
 ```
 
-Expected SHA-256:
+Expected SHA-256 values:
 
 ```text
-4b78b3740b5276bbc559ab916746a9d1fd228e8a6652c1737a78e854e955b24e
+9e4a08844b0b2d49f6c8cd308632f28d851fac5554e538f22dc7d6ca39cf7d9a  Ra1nUSB.Sliver.7z
+4b78b3740b5276bbc559ab916746a9d1fd228e8a6652c1737a78e854e955b24e  Ra1nUSB Sliver.dmg
 ```
 
 ## Troubleshooting
@@ -174,9 +196,9 @@ Use this environment only with hardware and devices that you own or are explicit
 
 ## Distribution notes
 
-The image is approximately 3.73 GiB and must not be committed to normal Git history. GitHub blocks regular repository files larger than 100 MiB, and a single GitHub Release asset must be under 2 GiB. Before publishing, choose an appropriate distribution method and confirm that redistribution is permitted.
+The image is distributed as the compressed `Ra1nUSB.Sliver.7z` asset in [Release v1.0.0](https://github.com/kristoferUA/Ra1nUSB-Sliver-5.5-macOS-image/releases/tag/v1.0.0). Extract the DMG before flashing it to a USB drive.
 
-The current local repository deliberately ignores DMG files and contains the image checksum only. No image has been uploaded anywhere.
+Large disk images and archives are deliberately excluded from Git history. The repository tracks documentation and checksums, while downloadable builds are published through GitHub Releases.
 
 ## Credits
 
