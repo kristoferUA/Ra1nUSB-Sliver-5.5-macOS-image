@@ -108,8 +108,10 @@ Windows may report that one or more partitions are unreadable after flashing. Do
 
 ## Configure `EFI/CLOVER/config.plist` on the USB drive
 
-[!IMPORTANT]
-> After flashing the image and before the first boot from the USB drive, edit `EFI/CLOVER/config.plist` on the flashed drive for the exact components in your PC. The default configuration is not universal and may fail to boot—or behave incorrectly—on different hardware.
+> [!IMPORTANT]
+> After flashing the image and before the first boot from the USB drive, edit `EFI/CLOVER/config.plist` on the
+> flashed drive for the exact components in your PC. The default configuration is not universal and may fail to
+> boot—or behave incorrectly—on different hardware.
 
 Mount the EFI partition of the flashed USB drive, open `EFI/CLOVER/config.plist`, and review at least the following areas where applicable:
 
